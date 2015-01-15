@@ -20,14 +20,14 @@ public class DeviceHelper {
 	 */
 	@NotNull
 	public static String getUniqueDeviceId(@NotNull Context context) {
-		String uniqueDeviceId = Build.SERIAL;
+		String uniqueDeviceId = Settings.Secure.getString(context.getContentResolver(),
+				Settings.Secure.ANDROID_ID);
 		if (uniqueDeviceId == null || uniqueDeviceId.equalsIgnoreCase("unknown")) {
-			String androidId = Settings.Secure.getString(context.getContentResolver(),
-					Settings.Secure.ANDROID_ID);
-			if (androidId == null) {
+			uniqueDeviceId = Build.SERIAL;
+			if (uniqueDeviceId == null || uniqueDeviceId.equalsIgnoreCase("unknown")) {
 				return getUniquePseudoID();
 			}
-			return androidId;
+			return uniqueDeviceId;
 		}
 		return uniqueDeviceId;
 	}
