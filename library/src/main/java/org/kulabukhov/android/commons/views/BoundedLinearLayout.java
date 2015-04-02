@@ -12,9 +12,9 @@ import org.kulabukhov.android.commons.R;
  */
 public class BoundedLinearLayout extends LinearLayout {
 
-    private final int mBoundedWidth;
+    private int mBoundedWidth;
 
-    private final int mBoundedHeight;
+    private int mBoundedHeight;
 
     public BoundedLinearLayout(Context context) {
         super(context);
@@ -46,4 +46,14 @@ public class BoundedLinearLayout extends LinearLayout {
         }
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
+
+	public void setBoundedWidth(int boundedWidth) {
+		this.mBoundedWidth = boundedWidth;
+		requestLayout();
+	}
+
+	public void setBoundedHeight(int boundedHeight) {
+		this.mBoundedHeight = boundedHeight;
+		requestLayout();
+	}
 }
