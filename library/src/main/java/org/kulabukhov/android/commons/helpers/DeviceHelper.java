@@ -3,8 +3,7 @@ package org.kulabukhov.android.commons.helpers;
 import android.content.Context;
 import android.os.Build;
 import android.provider.Settings;
-
-import org.jetbrains.annotations.NotNull;
+import android.support.annotation.NonNull;
 
 import java.util.UUID;
 
@@ -18,8 +17,8 @@ public class DeviceHelper {
 	 * @param context context
 	 * @return unique device id
 	 */
-	@NotNull
-	public static String getUniqueDeviceId(@NotNull Context context) {
+	@NonNull
+	public static String getUniqueDeviceId(@NonNull Context context) {
 		String uniqueDeviceId = Settings.Secure.getString(context.getContentResolver(),
 				Settings.Secure.ANDROID_ID);
 		if (uniqueDeviceId == null || uniqueDeviceId.equalsIgnoreCase("unknown")) {

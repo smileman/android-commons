@@ -1,6 +1,6 @@
 package org.kulabukhov.android.commons.helpers;
 
-import org.jetbrains.annotations.Nullable;
+import android.support.annotation.Nullable;
 
 /**
  * Helper class to work with strings
