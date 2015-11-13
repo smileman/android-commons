@@ -14,7 +14,7 @@ import org.kulabukhov.android.commons.other.Typefaces;
  * <br>
  * Font can be set via 'typeface' attribure in xml or setter method {@link #setTypeface(String)}.
  * <br>
- * All custom font expected to be in .ttf format and located in application 'assets/fonts/' directory
+ * All custom font expected to be in application 'assets/fonts/' directory
  */
 public class TypefacedTextView extends TextView {
 	

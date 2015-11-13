@@ -16,7 +16,7 @@ public class Typefaces {
 			if (!cache.containsKey(fontName)) {
 				try {
 					Typeface t = Typeface.createFromAsset(c.getAssets(),
-							String.format("fonts/%s.ttf", fontName));
+							String.format("fonts/%s", fontName));
 					cache.put(fontName, t);
 				} catch (Exception e) {
 					Log.e(TAG,
